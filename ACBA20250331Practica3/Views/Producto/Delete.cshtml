@@ -1,0 +1,46 @@
+﻿@model ACBA20250331Practica3.Models.Producto
+
+@{
+    ViewData["Title"] = "Eliminar Producto";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-danger text-white">
+                    <h4 class="mb-0">Eliminar Producto</h4>
+                </div>
+                <div class="card-body">
+                    <h5 class="mb-4">¿Estás seguro de que deseas eliminar este producto?</h5>
+
+                    <dl class="row">
+                        <dt class="col-sm-4">Nombre:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Nombre)</dd>
+
+                        <dt class="col-sm-4">Descripción:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Descripcion)</dd>
+
+                        <dt class="col-sm-4">Precio:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Precio)</dd>
+
+                        <dt class="col-sm-4">Stock:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Stock)</dd>
+                    </dl>
+
+                    <form asp-action="Delete" class="mt-4">
+                        <input type="hidden" asp-for="Id" />
+                        <button type="submit" class="btn btn-danger">
+                            <i class="bi bi-trash"></i> Eliminar
+                        </button>
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left-circle"></i> Volver a la Lista
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
